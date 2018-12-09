@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+* { margin:0; padding:0; }
+body { font-family: 'Open Sans', sans-serif; font-size:14px;/*font-size:1em;*/ }
+
+
+
+.header { /*메뉴박스(menu-top-home)와 고정된 메뉴박스(menu-top-home-fixed)를 감싸는 부모박스*/
+	position:relative; width:100%; height:750px;
+	background:url(/WebContent/onpage/imgs/app.jpg) no-repeat center center;
+	background-size:cover; 
+	background-attachment:fixed;
+	/* 풀스크린 배경 설정 */	
+	/* 박스에 꽉차게 배경이미지 사이즈를 자동으로 조절한다. */
+}
+/*그리드 시스템의 마지막 분기점이 768픽셀*/
+@media screen and (max-width:768px) {
+	.header { height:600px; }
+}
+.menu-top-home { height:60px; } /*로고와 메뉴를 감싸는 박스*/
+.row { height:60px; } /*부트스트랩의 그리드 시스템을 사용하기 위해서 추가한 박스*/
+.row img { height:35px; margin-top:10px; } /*로고를 감싸는 박스*/
+/*.align-right : 메인메뉴를 감싸는 박스*/
+.align-right ul { list-style:none; } /*list-style:none : 목록 앞에 블릿을 없앤다.*/
+.align-right ul li { float:left; } /*항목이 좌에서 우로 배치되도록 한다.*/
+.align-right ul li a { /*메뉴 텍스트를 감싸는 박스, a 박스는 대표적인 인라인 박스이므로 블록형 박스로 변경해야 레이아웃을 정상적으로 잡을 수 있다.*/
+	display:block; height:60px; padding:0 20px; line-height:60px; 
+	color:#FFF; text-align:right;
+}
+.align-right ul li a.btn { height:40px; margin-top:10px; line-height:40px; }
+
+
+
+.menu-top-home-fixed { /*브라우저(window) 아래로 65픽셀 이상 스크롤 했을 때 보여지는 고정된 냅바 박스 : 처음 상태에서는 브라우저에 노출이 안되어야 한다.*/
+	position:fixed; left:0px; top:0px; width:100%; height:60px;
+	/*position:fixed > 박스를 고정시킨다. left와 top 속성은 박스에 위치를 잡는다.*/
+	margin-top:-65px; /*박스를 브라우저 위로 65픽셀 올렸다. > 브라우저에 보이지 않게 한다.*/
+	padding:0;
+	background:#FFF; border-bottom:1px solid #e2e3e8; 
+	z-index:999; /*z-index 속성은 값을 높게 설정할수록 모든 박스를 덮는다.*/
+    transition: all 0.5s ease-in-out; 
+	/*메뉴가 아래쪽으로 위치가 변경될 때 부드럽게 변경되도록 하는 역할, 여기에서 진행 시간인 0.1s를 느리게 설정하면 보다더 부드럽게 된다.*/
+}
+.menu-top-home-fixed .align-right ul li a { color:#333; }
+/*menu-top-home-fixed 박스의 배경색이 흰색인데, menu-top-home 박스의 메뉴 텍스트 색상이 흰색이므로 어두운 회색으로 다시 설정했다.*/
+
+
+
+.header h1 { 
+	width:700px; margin:0 auto; margin-top:120px;
+	font-family: 'Calligraffitti', cursive;
+	text-align:center; color:#FFF; font-size:60px; font-weight:bold;
+}
+.header h2 { 
+	width:700px; margin:0 auto;
+	font-family: 'Calligraffitti', cursive;
+	text-align:center; color:#D8D8D8; font-size:60px;
+}
+.header p {
+	width:700px; margin:0 auto;	
+	text-align:center; color:#E8E8E8;
+}
+.header .btn-project {
+	position:absolute; left:50%; top:55%; width:250px; height:80px;
+	margin-left:-125px; font-size:24px; font-weight:300;
+}
+.header .hd-project { width:305px; margin:0 auto; margin-top:230px; }
+.header .hd-project img { float:left; margin-top:-5px; }
+.header .hd-project span { padding-left:20px; color:#FFF; }
+
+
+
+
+
+.mobile img { display:block; width:230px; margin:0 auto; padding-top:50px; }
+/*모바일 영역에서의 로고*/
+.mobile .group-btn { width:230px; margin:0 auto; margin-top:20px; }
+/*모바일 로고 아래에 있는 로그인 버튼과 회원가입 버튼을 감싸는 박스*/
+.mobile .btn { width:110px; height:40px; }
+.mobile .btn:first-child { margin-right:5px; }
+/*부트스트랩 스타일시트에서 버튼사이의 간격을 5픽셀 적용하기 때문에 5픽셀만 추가적으로 띄웠다.*/
+.hd-mobile h1 { 
+	width:300px; margin:0 auto; margin-top:80px;
+	font-family: 'Calligraffitti', cursive; font-size:30px; text-align:center;
+}
+.hd-mobile h2 { 
+	width:300px; margin:0 auto; margin-top:10px;
+	font-family: 'Calligraffitti', cursive; font-size:28px; text-align:center;
+}
+.hd-mobile p { display:none; }
+.hd-mobile .btn-project { margin-top:30px; }
+.hd-mobile .hd-project { width:295px; margin:0 auto; margin-top:190px; }
+.hd-mobile .hd-project span { padding-left:10px; }
+
+
+
+
+#features { padding:80px 0; background:#f0f1f5; }
+#features h3:first-child { margin-top:50px; font-size:32px; font-weight:lighter; }
+#features h3:nth-child(2) { margin-top:-10px; font-size:32px; }
+#features p.first-text { margin:30px 0; }
+#features img { width:100%; height:100%; }
+
+@media screen and (max-width:768px) {
+	#features h3:first-child { margin-top:-20px; }
+	#features img { margin-top:50px; }
+}
+
+
+
+#freebies { padding:80px 0; background:#FFF; }
+#freebies h3:first-child { margin-top:50px; font-size:32px; font-weight:lighter; }
+#freebies h3:nth-child(2) { margin-top:-10px; font-size:32px; }
+#freebies p.first-text { margin:30px 0; }
+#freebies img { width:100%; height:100%; }
+
+
+
+#support { padding:80px 0; background:#f0f1f5; }
+#support h3:first-child { margin-top:50px; font-size:32px; font-weight:lighter; }
+#support h3:nth-child(2) { margin-top:-10px; font-size:32px; }
+#support p.first-text { margin:30px 0; }
+#support img { width:100%; height:100%; }
+
+
+
+#bc { padding:80px 0; background:#FFF; }
+#bc img { width:110px; height:108px; }
+#bc h3 { padding-left:10px; }
+#bc h3:first-child { margin-top:50px; font-size:32px; font-weight:lighter; }
+#bc h3:nth-child(2) { margin-top:-10px; font-size:32px; }
+#bc p { margin-top:10px; }
+
+
+
+
+#binfo { padding:80px 0; background:#1a1f2a; }
+#binfo .align-center { text-align:center; }
+#binfo h4 { font-size:24px; color:#FFF; }
+#binfo p { color:#555d6d; }
+
+
+
+.dark-footer { padding:30px 10px 80px 10px; background:#0d121b; }
+.dark-footer p { color:#555d6d; text-align:center; }
+.dark-footer span { color:#ad181b; }
+.dark-footer span:hover { color:#FFF; cursor:pointer; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

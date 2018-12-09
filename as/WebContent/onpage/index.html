@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Bootstrap Web Design</title>
+<link href="https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(document).ready(function(e) {		
+        $(window).scroll(function( ) {			
+			if($(this).scrollTop( ) > 65) {
+				$('.menu-top-home-fixed').css('margin-top', '0px');				
+			}else {			
+				$('.menu-top-home-fixed').css('margin-top', '-65px');				
+			}
+		});			
+		
+		var speed = 700;	 
+		
+		function scrolling(obj){
+			if (!obj) {
+				$('html, body').animate({scrollTop:0},speed);
+			}else{
+				var posTop = $(obj).offset().top -80;
+				$('html, body').animate({scrollTop:posTop}, speed )
+			}
+		};
+		 
+		 
+		$("ul li a").click(function( ) {
+			var direction = $(this).attr("href");
+			scrolling( direction );
+			return false;
+		});
+    });
+</script>
+</head>
+
+<body>
+<div class="header" id="home">
+	<div class="menu-top-home hidden-xs">
+		<div class="container">
+        	<div class="row">
+            	<div class="col-sm-3">
+                	<img src="imgs/logo-small-white.png" alt="logo">
+                </div>
+                <div class="col-sm-9 align-right">
+                	<ul>
+                    	<li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#freebies">Freebies</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#" class="btn btn-danger" role="button">Sign Up</a></li>
+                    </ul>
+                </div>
+        	</div><!--row:end-->
+        </div><!--container:end-->
+    </div><!--menu-top-home:end-->
+
+    <div class="menu-top-home-fixed hidden-xs">
+		<div class="container">
+        	<div class="row">
+            	<div class="col-sm-3">
+                	<img src="imgs/logo-small-black.png" alt="logo">
+                </div>
+                <div class="col-sm-9 align-right">
+                	<ul>
+                    	<li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#freebies">Freebies</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#" class="btn btn-danger" role="button">Sign Up</a></li>
+                    </ul>
+                </div>
+        	</div><!--row:end-->
+        </div><!--container:end-->
+    </div><!--menu-top-home-fixed:end-->
+    
+    <!--모바일 영역 메뉴:시작-->
+    <div class="mobile hidden-sm hidden-md hidden-lg">
+    	<img src="imgs/logo-small-white.png" alt="logo">
+        <div class="group-btn">
+            <button class="btn btn-default">Log In</button>
+            <button class="btn btn-danger">Sign Up</button>
+        </div>
+    </div>
+    <!--모바일 영역 메뉴:끝-->
+    
+    <div class="container hidden-xs">
+    	<h1>Welcome </h1>
+        <h2>if you want to enjoy this time</h2>
+        <p>Almost people know that</p>
+        <button class="btn btn-primary btn-project">Upload Project</button>
+        <div class="hd-project">
+        	<img src="imgs/drop-icon.png" alt="drop">
+            <span>Drop here or select your project</span>
+            <span>prepared in the PNG or JPG format</span>
+        </div>
+    </div>
+    
+    <div class="hd-mobile hidden-sm hidden-md hidden-lg">
+    	<h1>Display your web design</h1>
+        <h2>in a web browser</h2>
+        <p>Fastest way to present your design and get feedback from your clients!</p>
+        <button class="btn btn-primary btn-project">Upload Project</button>
+        <div class="hd-project">
+        	<img src="imgs/drop-icon.png" alt="drop">
+            <span>Drop here or select your project</span>
+            <span>prepared in the PNG or JPG format</span>
+        </div>
+    </div>
+</div><!--header:end-->
+
+<div id="features">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-xs-12 col-sm-5">
+            	<h3>Fastest way to</h3>
+                <h3>present your design</h3>
+                <p class="first-text">Symu is an easy to use tool for web designers. With the help of our system you can present your projects in a browser for free. It is all very easy!</p>
+                <strong>Drop your project anywhere</strong>
+                <p>Symu will prepare a mockup of your website for you!</p>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+            	<img src="imgs/symu-panel-1.png" alt="features">
+            </div>
+        </div><!-- row:end -->
+    </div><!-- container:end -->
+</div>
+
+<div id="freebies">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-xs-12 col-sm-7">
+            	<img src="imgs/symu-panel-2.png" alt="freebies">
+            </div>
+        	<div class="col-xs-12 col-sm-5">
+            	<h3>The simplest way to</h3>
+                <h3>get feedback from your clients!</h3>
+                <p class="first-text"><strong>You can add a comment anywhere</strong> on a project, this is a fast and easy way to gather input and proposed changes from your client. Click anywhere on a project and leave your thoughts.</p>
+                <strong>Every added comment becomes a task!</strong>
+                <p>Thanks to this solution you can easily mark the changes you have made.</p>
+            </div>            
+        </div><!-- row:end -->
+    </div><!-- container:end -->
+</div>
+
+<div class="hidden-xs" id="support">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-5">
+            	<h3>Support for</h3>
+                <h3>Responsive projects</h3>
+                <p class="first-text">Projects added to Symu are automatically checked whether they are mobile ready.</p>                
+                <p>The program will divide your files into responsive versions on its own! You have the option to view the projects in either normal or responsive modes!</p>
+            </div>
+            <div class="col-sm-7">
+            	<img src="imgs/home-panel-3.jpg" alt="support">
+            </div>
+        </div><!-- row:end -->
+    </div><!-- container:end -->
+</div>
+
+<div class="hidden-xs" id="bc">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-6">
+            	<div class="row">
+                	<div class="col-sm-3">
+                    	<img src="imgs/envelope-icon.jpg" alt="mail">
+                    </div>
+                    <div class="col-sm-9">
+            	    	<h3>Email</h3>
+                		<h3>notifications</h3>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-sm-12">            
+                		<p>An email notification will be sent when your client comments or opens a project. You will know when a client recieves the projects and if he has seen it!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+            	<div class="row">
+                	<div class="col-sm-3">
+            			<img src="imgs/lock-icon.jpg" alt="lock">
+                    </div>
+                    <div class="col-sm-9">
+                        <h3>Project</h3>
+                        <h3>protection</h3>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-sm-12">
+                		<p>Your projects will be perfectly safe, Symu uses SSL encryption and every project added receives a unique link. Additionally you have the option to secure your project with a password.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hidden-xs" id="binfo">
+	<div class="row">
+    	<div class="col-sm-2 align-center">
+        	<h4>253</h4>
+            <p>Todays uploads</p>
+        </div>
+        <div class="col-sm-2 align-center">
+        	<h4>171092</h4>
+            <p>Projects uploaded</p>
+        </div>
+        <div class="col-sm-4 align-center">
+        	<button class="btn btn-danger btn-lg">Sign Up now</button>
+        </div>
+        <div class="col-sm-2 align-center">
+        	<h4>931523</h4>
+            <p>Project views</p>
+        </div>
+        <div class="col-sm-2 align-center">
+        	<h4>100867</h4>
+            <p>Comments posted</p>
+        </div>
+    </div>
+</div>
+
+<div class="dark-footer col-xs-12 col-sm-12">
+	<p>The site owner is not responsible for uploaded images. You can only upload images for which you own the copyright.<br>Symu uses "Cookies" for stats | <span>Terms of service</span> | Contact: <span>contact@symu.co</span></p>
+</div>
+</body>
+</html>
