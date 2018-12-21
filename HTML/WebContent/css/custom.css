@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+/* h1 {
+	border:5px solid red;
+	padding:20px;	 박스모델에서 안쪽은 패팅 바깥쪽은 마진
+	margin:20px;  
+	display:block; 화면전체를 사용하는것을 block엘리먼트 
+	width:100px;	자기 크기만큼만 갖는것을 인라인 엘리먼트
+} */
+#grid{
+	border:5px solid pink;
+	display:grid;
+	gri	
+}
+div {
+	border:5px solid gray;
+	
+}
+
