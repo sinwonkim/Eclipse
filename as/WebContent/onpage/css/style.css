@@ -9,7 +9,7 @@ body { font-family: 'Open Sans', sans-serif; font-size:14px;/*font-size:1em;*/ }
 
 .header { /*메뉴박스(menu-top-home)와 고정된 메뉴박스(menu-top-home-fixed)를 감싸는 부모박스*/
 	position:relative; width:100%; height:750px;
-	background:url(/WebContent/onpage/imgs/app.jpg) no-repeat center center;
+	background:url(../imgs/na.jpg) no-repeat center center;
 	background-size:cover; 
 	background-attachment:fixed;
 	/* 풀스크린 배경 설정 */	
